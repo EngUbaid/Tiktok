@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tiktk/Constant.dart';
 
-class Buttons extends StatelessWidget {
+class profileButtons extends StatelessWidget {
   final String tittle;
   final ontap;
   final color;
-  final int wedth;
-  const Buttons(
+  const profileButtons(
       {super.key,
       required this.tittle,
       required this.ontap,
       required this.color,
-      required this.wedth});
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class Buttons extends StatelessWidget {
       onTap: ontap,
       child: Container(
         width: 90,
-        height: 50,
+        height: 40,
         decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(5),
@@ -27,7 +26,7 @@ class Buttons extends StatelessWidget {
         child: Center(
           child: Text(
             tittle,
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: TextStyle(fontSize: 13, color: Colors.white),
           ),
         ),
       ),

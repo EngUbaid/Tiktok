@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktk/Constant.dart';
+import 'package:tiktk/View/Screens/bottom_navigaationScren/All_Navigation_Screen/navigation_Bar.dart';
 import 'package:tiktk/View/widget/Buttons.dart';
 import 'package:tiktk/View/widget/textformfield.dart';
 
@@ -53,7 +54,8 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Buttons(tittle: "Log in", ontap: () {}, color: buttoncolor),
+              Buttons(tittle: "Log in", ontap: () {}, color: buttoncolor,
+              wedth: 70,),
               SizedBox(
                 height: 20,
               ),
@@ -65,7 +67,13 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return Allnavigation();
+                          },
+                        ));
+                      },
                       child: Text(
                         "Sign Up",
                         style: TextStyle(fontSize: 25, color: buttoncolor),
