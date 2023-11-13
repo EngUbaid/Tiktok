@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:tiktk/Constant.dart';
+import 'package:tiktk/View/Screens/bottom_navigaationScren/All_Navigation_Screen/Home_Screen/User_Profile/user_profile_Screen.dart';
 
 class HomepageSidebar extends StatefulWidget {
   const HomepageSidebar({super.key});
@@ -53,20 +54,24 @@ class _HomepageSidebarState extends State<HomepageSidebar>
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    border: Border.all( color: Colors.white,),
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
                     borderRadius: BorderRadius.circular(26),
-                   // image: DecorationImage(
-                   //   fit: BoxFit.cover,
-                   //   image: NetworkImage('https://images.unsplash.com/photo-1699187129235-442d3f1ac069?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D'))
+                    // image: DecorationImage(
+                    //   fit: BoxFit.cover,
+                    //   image: NetworkImage('https://images.unsplash.com/photo-1699187129235-442d3f1ac069?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D'))
                   ),
                   child: CircleAvatar(
                     radius: 20,
-                    backgroundImage: NetworkImage('https://images.unsplash.com/photo-1699187129235-442d3f1ac069?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D'),
+                    backgroundImage: NetworkImage(
+                        'https://images.unsplash.com/photo-1699187129235-442d3f1ac069?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8fA%3D%3D'),
                   ),
                 ),
                 CircleAvatar(
                   radius: 12,
-                  backgroundImage: NetworkImage("https://images.unsplash.com/photo-1699147790292-257de5aeed1f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D"),
+                  backgroundImage: NetworkImage(
+                      "https://images.unsplash.com/photo-1699147790292-257de5aeed1f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D"),
                 )
               ],
             ),
@@ -82,11 +87,15 @@ class _HomepageSidebarState extends State<HomepageSidebar>
     );
   }
 
-
   _Sidebarlikes(Icon iconname, String label, TextStyle style) {
     return Column(
       children: [
-        IconButton(onPressed: () {}, icon: Icon(iconname.icon,size: 36,)),
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              iconname.icon,
+              size: 36,
+            )),
         // SizedBox(
         //   height: 3,
         // ),
@@ -99,37 +108,44 @@ class _HomepageSidebarState extends State<HomepageSidebar>
   }
 
   _Profile() {
-    return Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.bottomCenter,
-        children: [
-          Container(
-            width: 55,
-            height: 55,
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(50),
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D"),
-                    fit: BoxFit.cover)),
-          ),
-    
-          Positioned(
-            bottom: -10,
-            
-            child: CircleAvatar(
-              radius: 14,
-              backgroundColor: buttoncolor,
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.add,
-                    size: 15,
-                    color: Colors.white,
-                  )),
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return UserProfile();
+          },
+        ));
+      },
+      child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.bottomCenter,
+          children: [
+            Container(
+              width: 55,
+              height: 55,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(50),
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D"),
+                      fit: BoxFit.cover)),
             ),
-          ),
-        ]);
+            Positioned(
+              bottom: -10,
+              child: CircleAvatar(
+                radius: 14,
+                backgroundColor: buttoncolor,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.add,
+                      size: 15,
+                      color: Colors.white,
+                    )),
+              ),
+            ),
+          ]),
+    );
   }
 }

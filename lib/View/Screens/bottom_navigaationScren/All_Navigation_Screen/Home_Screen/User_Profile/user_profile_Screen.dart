@@ -1,20 +1,18 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktk/Constant.dart';
-import 'package:tiktk/View/Screens/bottom_navigaationScren/Profile_Screen/edit_Profile.dart';
 import 'package:tiktk/View/Screens/bottom_navigaationScren/Profile_Screen/profile_Video.dart';
-import 'package:tiktk/View/widget/Buttons.dart';
 import 'package:tiktk/View/widget/profilebuton.dart';
 import 'package:video_player/video_player.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class UserProfile extends StatefulWidget {
+  const UserProfile({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<UserProfile> createState() => _UserProfileState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +20,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: backroundcolor,
         centerTitle: true,
         title: Text('username'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.more_rounded))],
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.share))
+          ],
       ),
       body: Padding(
         padding: EdgeInsets.all(8.0),
@@ -35,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 backgroundImage: NetworkImage(
                     'https://images.unsplash.com/photo-1695653422557-3b85c1d6d061?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8'),
               ),
-              Text('@ubaidullah'),
+              Text('@ubaidullah',style: TextStyle(fontWeight: FontWeight.bold),),
               SizedBox(
                 height: 9,
               ),
@@ -52,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         'Follwing',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18,),
                       )
                     ],
                   ),
@@ -66,7 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         'Follwers',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18),
                       )
                     ],
                   ),
@@ -80,7 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         'Likes',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                            fontSize: 18),
                       )
                     ],
                   )
@@ -93,21 +94,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   profileButtons(
-                    tittle: 'Edit Profile',
-                    ontap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return EditProfilescreen();
-                        },
-                      ));
-                    },
-                    color: bordercolor,
+                    tittle: 'Follow',
+                    ontap: () {},
+                    color: buttoncolor,
                   ),
                   SizedBox(
                     width: 8,
                   ),
                   profileButtons(
-                    tittle: 'Share Profile',
+                    tittle: 'Messege',
                     ontap: () {},
                     color: bordercolor,
                   ),
@@ -116,11 +111,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: 10,
               ),
-              Text("Welcome to my profile"),
+              Text("bio"),
               SizedBox(
                 height: 10,
               ),
-              Text('add camera'),
+              Text(''),
               SizedBox(
                 height: 15,
               ),

@@ -26,7 +26,7 @@ class profileButtons extends StatelessWidget {
         child: Center(
           child: Text(
             tittle,
-            style: TextStyle(fontSize: 13, color: Colors.white),
+            style: TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),
